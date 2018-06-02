@@ -1,3 +1,19 @@
-* {font-family: 'VT323', monospace;
+* {
+    font-family: 'Oxygen Mono', monospace;
+    background-color: black;
+    color: #14F074;
 }
 
+h3 {
+    font-size: 24pt;
+    margin:0 auto;
+    text-align: center;
+
+}
+
+.gamebox {
+    margin: 0 auto;
+    width: 600px;
+    border: 2px solid #14F074;
+
+}

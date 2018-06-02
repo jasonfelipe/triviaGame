@@ -24,10 +24,13 @@
 //timer stops
 //score is shown
 
+$(document).ready(function() {
+
+
 //--------------Variables----------------------
-var correct = 0
-var incorrect = 0
-var unanswered = 0
+var correct = 0;
+var incorrect = 0;
+var unanswered = 0;
 
 
 //-----------Questions, Answers, And Wrong Stuff------------
@@ -40,15 +43,33 @@ var qandA = [
     {question: "Where is Fallout 2's the Chosen One from?", answer: "Arroyo"},
     {question: "What country did the United States annex in 2076?", answer: "Canada"},
     {question: "What country invaded Alaska in 2066?", answer:"China"}
-]
+];
 
 var wrong = [
-    {countries = ["Africa", "Russia", "Australia", "Britain", "France", "Japan"]},
-    {years = ["2066", "1990", "2010", "2050", "3000", "2001"]},
-    {jobs = ["Postman", "Soldier", "Vault Dweller", "Wanderer", "Bum", "Drug Dealer"]},
-    {special = ["Strength", "Luck", "Perception", "Intellegence", "Agility", "Charisma", "Endurance"]},
-    {places = ["New Vegas", "Phoenix", "Mesa", "Detroit", "Washington D.C.", "Springfield"]},
-    {vaults = ["13", "666", "76", "777", "300", "001"]},
-]
+    {countries: ["Africa", "Russia", "Australia", "Britain", "France", "Japan"]},
+    {years: ["2066", "1990", "2010", "2050", "3000", "2001"]},
+    {jobs: ["Postman", "Soldier", "Vault Dweller", "Wanderer", "Bum", "Drug Dealer"]},
+    {special: ["Strength", "Luck", "Perception", "Intellegence", "Agility", "Charisma", "Endurance"]},
+    {places: ["New Vegas", "Phoenix", "Mesa", "Detroit", "Washington D.C.", "Springfield"]},
+    {vaults: ["13", "666", "76", "777", "300", "001"]},
+];
 
 //--------Game Logic---------
+for (i = 0; i < wrong[i].length; i++) {//something
+
+}
+
+//-----------Text------------
+
+//Game instructions... Should disappear after a start button is pressed.
+$('#instructions').html("This is a test to see if you are suitable to be a proud member of the new society of Vault Dwellers!")
+
+//Questions
+$('#questions').text(qandA[0].question);
+
+//Answers
+$('#answers').text(wrong[1].years);
+
+
+
+});
