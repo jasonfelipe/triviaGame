@@ -67,9 +67,19 @@ var answerArray = [];
 //question 2 = wrong[5].vaults
 //and so forth
 //so how do we do it?
-for (i = 0; i < wrong[i].length; i++) {//maybe? I'm not too sure.
 
+var random = wrong[0].countries[Math.floor(Math.random() * wrong[0].countries.length)];
+console.log(random)
+
+
+//OK so this takes the countries array and takes 3 random things and puts them into our answers array!
+for(var i = 0; i < 3; i++) {
+    var idx = Math.floor(Math.random() * wrong[0].countries.length);
+    answerArray.push(wrong[0].countries[idx]);
+    wrong[0].countries.splice(idx, 1);
 }
+
+console.log(answerArray);
 
 //Also, we have to put those in an array which mixes up the answer and the fake answers, correct?
 //So how do we do that?
@@ -88,7 +98,5 @@ $('#questions').text(qandA[0].question);
 //Make each answer a div so they can be placed like buttons
 //each answer takes something from answersArray, try making them randomized.
 $('#answers').text(wrong[1].years, qandA[0].answer); //placeholder: the real answer won't show up in text though. Why's that?
-
-console.log(wrong[1].years, qandA[0].answer)
 
 });
