@@ -32,8 +32,10 @@ var correct = 0;
 var incorrect = 0;
 var unanswered = 0;
 
+var timer = 30;
 
-//-----------Questions, Answers, And Wrong Stuff------------
+
+//-----------Questions, Answers, And Wrong Arrays------------
 var qandA = [
     {question: "What year did the original Fallout game take place?", answer: "2077"},
     {question: "What vault did Fallout 3 start in?", answer: "Vault 101"},
@@ -70,6 +72,7 @@ for (i = 0; i < wrong[i].length; i++) {//maybe? I'm not too sure.
 }
 
 //Also, we have to put those in an array which mixes up the answer and the fake answers, correct?
+//So how do we do that?
 
 
 //-----------Text------------
@@ -81,7 +84,10 @@ $('#instructions').html("This is a test to see if you are suitable to be a proud
 $('#questions').text(qandA[0].question);
 
 //Answers
-$('#answers').text(wrong[1].years, qandA[0].answer);
+//Here's a plan:
+//Make each answer a div so they can be placed like buttons
+//each answer takes something from answersArray, try making them randomized.
+$('#answers').text(wrong[1].years, qandA[0].answer); //placeholder: the real answer won't show up in text though. Why's that?
 
 console.log(wrong[1].years, qandA[0].answer)
 
