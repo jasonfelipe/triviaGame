@@ -54,10 +54,23 @@ var wrong = [
     {vaults: ["13", "666", "76", "777", "300", "001"]},
 ];
 
+var answerArray = [];
+
 //--------Game Logic---------
-for (i = 0; i < wrong[i].length; i++) {//something
+
+//Okay, so what we're trying to do is:
+//get random wrong answers from an array to match each specific question
+//so for instance, 
+//question 1 = wrong[1].years
+//question 2 = wrong[5].vaults
+//and so forth
+//so how do we do it?
+for (i = 0; i < wrong[i].length; i++) {//maybe? I'm not too sure.
 
 }
+
+//Also, we have to put those in an array which mixes up the answer and the fake answers, correct?
+
 
 //-----------Text------------
 
@@ -68,8 +81,8 @@ $('#instructions').html("This is a test to see if you are suitable to be a proud
 $('#questions').text(qandA[0].question);
 
 //Answers
-$('#answers').text(wrong[1].years);
+$('#answers').text(wrong[1].years, qandA[0].answer);
 
-
+console.log(wrong[1].years, qandA[0].answer)
 
 });
