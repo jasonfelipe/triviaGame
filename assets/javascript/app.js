@@ -109,7 +109,15 @@ console.log ("This is our shuffled array:" + shuffledAnswers)
 //-----------Text------------
 
 //Game instructions... Should disappear after a start button is pressed.
-$('#instructions').html("This is a test to see if you are suitable to be a proud member of the new society of Vault Dwellers!")
+$('#instructions').html("HELLO SPECIAL PERSON! <br> This is a test to see if you are suitable to be a Vault Dwellers! <br> This test is timed so BE CAREFUL! <br> DON'T PANIC! <br><br> CLICK START TO BEGIN!")
+
+
+// $('#button').onclick(function(){
+
+
+// })
+
+
 
 //Questions
 $('#questions').text(qandA[0].question);
