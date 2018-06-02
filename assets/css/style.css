@@ -17,3 +17,20 @@ h3 {
     border: 2px solid #14F074;
 
 }
+
+#answers {
+    margin: 0 auto;
+    width: 400px;
+    border: 2px solid #14F074;
+    
+    
+}
+
+#questions {
+    margin: 0 auto;
+    width: 400px;   
+    border: 2px solid #14F074;
+    
+    
+
+}

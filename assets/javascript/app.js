@@ -49,7 +49,7 @@ var qandA = [
 
 var wrong = [
     {countries: ["Africa", "Russia", "Australia", "Britain", "France", "Japan"]},
-    {years: ["2066", "1990", "2010", "2050", "3000", "2001"]},
+    {years: ["3066", "2025", "2010", "2050", "2999", "2000"]},
     {jobs: ["Postman", "Soldier", "Vault Dweller", "Wanderer", "Bum", "Drug Dealer"]},
     {special: ["Strength", "Luck", "Perception", "Intellegence", "Agility", "Charisma", "Endurance"]},
     {places: ["New Vegas", "Phoenix", "Mesa", "Detroit", "Washington D.C.", "Springfield"]},
@@ -68,22 +68,43 @@ var answerArray = [];
 //and so forth
 //so how do we do it?
 
-var random = wrong[0].countries[Math.floor(Math.random() * wrong[0].countries.length)];
-console.log(random)
 
-
-//OK so this takes the countries array and takes 3 random things and puts them into our answers array!
+//OK so this takes the Wrong Years array and takes 3 random things and puts them into our Answers Array!
 for(var i = 0; i < 3; i++) {
-    var idx = Math.floor(Math.random() * wrong[0].countries.length);
-    answerArray.push(wrong[0].countries[idx]);
-    wrong[0].countries.splice(idx, 1);
+    var idx = Math.floor(Math.random() * wrong[1].years.length);
+    answerArray.push(wrong[1].years[idx]);
+    wrong[1].years.splice(idx, 1);
 }
-
-console.log(answerArray);
 
 //Also, we have to put those in an array which mixes up the answer and the fake answers, correct?
 //So how do we do that?
 
+//So let's splice in the qandA into this Answer Array yes?
+answerArray.push(qandA[0].answer)
+
+//Now lets randomize it.
+function shuffle(answersArray) {
+    var currentIndex = answersArray.length, temporaryValue, randomIndex;
+  
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+  
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+  
+      // And swap it with the current element.
+      temporaryValue = answersArray[currentIndex];
+      answersArray[currentIndex] = answersArray[randomIndex];
+      answerArray[randomIndex] = temporaryValue;
+    }
+  
+    return answersArray;
+  }
+
+//It works!
+shuffledAnswers = shuffle(answerArray);
+console.log ("This is our shuffled array:" + shuffledAnswers)
 
 //-----------Text------------
 
@@ -93,10 +114,11 @@ $('#instructions').html("This is a test to see if you are suitable to be a proud
 //Questions
 $('#questions').text(qandA[0].question);
 
-//Answers
-//Here's a plan:
-//Make each answer a div so they can be placed like buttons
-//each answer takes something from answersArray, try making them randomized.
-$('#answers').text(wrong[1].years, qandA[0].answer); //placeholder: the real answer won't show up in text though. Why's that?
+//OUR SHUFFLED ARRAY WORKS!!!
+$('#answer1').text(shuffledAnswers[4]);
+$('#answer2').text(shuffledAnswers[3]);
+$('#answer3').text(shuffledAnswers[2]);
+$('#answer4').text(shuffledAnswers[1]);
+$('#answer5').text(shuffledAnswers[0])
 
 });
