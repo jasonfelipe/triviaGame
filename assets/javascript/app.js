@@ -32,8 +32,7 @@ var correct = 0;
 var incorrect = 0;
 var unanswered = 0;
 
-var timer = 30;
-
+var timeleft = 20;
 
 //-----------Questions, Answers, And Wrong Arrays------------
 var qandA = [
@@ -106,27 +105,40 @@ function shuffle(answersArray) {
 shuffledAnswers = shuffle(answerArray);
 console.log ("This is our shuffled array:" + shuffledAnswers)
 
-//-----------Text------------
 
 //Game instructions... Should disappear after a start button is pressed.
 $('#instructions').html("HELLO SPECIAL PERSON! <br> This is a test to see if you are suitable to be a Vault Dwellers! <br> This test is timed so BE CAREFUL! <br> DON'T PANIC! <br><br> CLICK START TO BEGIN!")
 
 
-// $('#button').onclick(function(){
+//-------------Starting-------------------
+$('#button').click(function gamestart(){
+
+    $('#button').html("Reset")
+    $('#instructions').html("You have: 20 seconds to answer the question!")
+    var timeleft = 20
+    clearInterval(countDown);
+//-----Timer----------
 
 
-// })
+var countDown = setInterval(function(){
+    timeleft--;
+    if(timeleft <= 0)
+        clearInterval(countDown);
+        $('#instructions').html("You have: " + timeleft + " seconds to answer the question!")
+},1000);
 
 
+    //Question
+    $('#questions').html(qandA[0].question);
 
-//Questions
-$('#questions').text(qandA[0].question);
+    //OUR SHUFFLED ARRAY WORKS!!!
+    $('#answer1').html(shuffledAnswers[4]);
+    $('#answer2').html(shuffledAnswers[3]);
+    $('#answer3').html(shuffledAnswers[2]);
+    $('#answer4').html(shuffledAnswers[1]);
+    $('#answer5').html(shuffledAnswers[0]);
 
-//OUR SHUFFLED ARRAY WORKS!!!
-$('#answer1').text(shuffledAnswers[4]);
-$('#answer2').text(shuffledAnswers[3]);
-$('#answer3').text(shuffledAnswers[2]);
-$('#answer4').text(shuffledAnswers[1]);
-$('#answer5').text(shuffledAnswers[0])
+
+});
 
 });

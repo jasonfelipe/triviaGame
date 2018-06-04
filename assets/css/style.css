@@ -17,6 +17,7 @@ body {
 
 
 h3 {
+    padding:50px;
     font-size: 24pt;
     margin:0 auto;
     text-align: center;
@@ -33,17 +34,18 @@ h3 {
     bottom: 0;
     left: 0;
     right: 0;
-    height: 700px;
+    height: 600px;
 }
 
 #instructions {
     text-align: center;
+    margin-top:50px;
 }
 
 #answers {
     margin: 0 auto;
-    margin-top: 150px;
-    width: 300px;
+    margin-top: 50px;
+    width: 250px;
     border: 2px solid #14F074;
 
 }
@@ -56,7 +58,6 @@ h3 {
     border: 2px solid #14F074;
     
     
-
 }
 
 .answer {
@@ -67,4 +68,17 @@ h3 {
 .answer:hover {
      background:  #14F074;
      color: black;
+}
+
+#button {
+    margin: 0 auto;
+    text-align: center;
+    width:100px;
+    margin-top: 10px;
+    border: 2px solid #14F074;
+}
+
+#button:hover {
+    background:  #14F074;
+    color: black;
 }
