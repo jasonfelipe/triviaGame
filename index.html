@@ -6,42 +6,38 @@
         Fallout Trivia Game
     </title>    
     <link href="https://fonts.googleapis.com/css?family=Oxygen+Mono" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link href="assets/css/reset.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="triviaGame/assets/css/style.css">
 </head>
 
-<body>        
+<body>
     <h3>WELCOME TO THE WORLD OF TOMORROW!</h3>
-    <div class="gamebox">
-        <div id="instructions">
+
+    <div class='gamebox'>
+        <div id="instructions"></div>
+
+        <button class='button' id='startBtn'>Start</button>
+
+        <!-- Question page -->
+        <div id=timeLeft></div>
+        <div id=currentQuestion></div>
+        <div class='question'></div>
+        <div class='answerList'></div>
+
+        <!-- Answer Page -->
+        <div id=message></div>
+        <div id=correctedAnswer></div>
         
-        </div>
-
-        <div id="button">
-            START
-        </div>
-
-
-        <div id="questions">
-
-        </div>
-
-
-
-        <div id="answers">
-            <div class="answer" id="answer1"></div>
-            <div class="answer" id="answer2"></div>
-            <div class="answer" id="answer3"></div>
-            <div class="answer" id="answer4"></div>
-            <div class="answer" id="answer5"></div>
-        </div>
-
-
-
+        <!-- Scoreboard -->
+        <div id=finalMessage></div>
+        <div id=correctAnswers></div>
+        <div id=incorrectAnswers></div>
+        <div id=unanswered></div>
+        <div id=qualified></div>
+        <button class='button' id='startOverBtn'></button>
     </div>
-
-    <!--Put the Jquery in first to prevent $ undefined errors-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="assets/javascript/app.js"></script>
+    <script type="text/javascript" src="triviaGame/assets/javascript/app.js"></script>
 </body>
 
 </html>

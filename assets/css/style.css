@@ -41,43 +41,100 @@ h3 {
     margin-top:50px;
 }
 
-#answers {
+.answerList {
     margin: 0 auto;
+    line-height: 1.8;
     margin-top: 50px;
     width: 250px;
-    border: 2px solid #14F074;
+    text-align: center;
 
 }
 
-#questions {
+#currentQuestion {
     padding: 15px;
     margin: 0 auto;
-    margin-top: 100px;
     width: 450px;   
-    border: 2px solid #14F074;
-    
-    
-}
-
-.answer {
     text-align: center;
 }
 
-/* Mouse over tricks. Green background, black text. */
-.answer:hover {
-     background:  #14F074;
-     color: black;
+.question {
+    padding: 15px;
+    margin: 0 auto;
+    width: 450px;   
+    text-align: center;
 }
 
-#button {
+#message {
+    padding: 15px;
+    margin: 0 auto;
+    width: 450px;   
+    text-align: center;
+}
+
+#correctedAnswer{
+    padding: 15px;
+    margin: 0 auto;
+    width: 450px;   
+    text-align: center;
+}
+
+#startBtn {
+    background: black;
     margin: 0 auto;
     text-align: center;
     width:100px;
-    margin-top: 10px;
-    border: 2px solid #14F074;
+    margin-top: 200px;
+    display: flex;
+    justify-content: center;
 }
 
-#button:hover {
+#startBtn:hover {
+    background:  #14F074;
+    color: black;
+}
+
+#finalMessage {
+    font-size: 24pt;
+    text-align: center;
+}
+
+#correctAnswers {
+    padding: 15px;
+    margin: 0 auto;
+    width: 450px;   
+    text-align: center;
+}
+
+#incorrectAnswers {
+    padding: 15px;
+    margin: 0 auto;
+    width: 450px;   
+    text-align: center;
+}
+
+#unanswered {
+    padding: 15px;
+    margin: 0 auto;
+    width: 450px;   
+    text-align: center;
+}
+
+#qualified {
+    padding: 15px;
+    margin: 0 auto;
+    width: 450px;   
+    text-align: center;
+}
+
+#startOverBtn {
+    background: black;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+#startOverBtn:hover {
     background:  #14F074;
     color: black;
 }
