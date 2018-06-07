@@ -1,10 +1,11 @@
 $( document ).ready(function() {
 
 
-//QUESTIONS ARRAY OF OBJECTS
 $('#startOverBtn').hide();
+$('#image').html('<img style="left: 1000px", src="assets/images/start.gif"/>')
 
 
+//QUESTIONS ARRAY OF OBJECTS
 var triviaQuestions = [{
 	question: "What year did the original Fallout game take place?",
 	answerList: ["3066", "2025", "2010", "2077"],
@@ -64,6 +65,7 @@ $('#instructions').html("HELLO SPECIAL PERSON! <br> This is a test to see if you
 $('#startBtn').on('click', function(){
 	$(this).hide();
 	$('#instructions').hide();
+	$('#image').empty();
 	newGame();
 });
 
@@ -93,6 +95,7 @@ function newGame(){
 function newQuestion(){
 	$('#message').empty();
 	$('#correctedAnswer').empty();
+	$('#image').empty();
 	answered = true;
 	
 	//sets up new questions & answerList
@@ -145,14 +148,21 @@ function answerPage(){
 	if((userSelect == rightAnswerIndex) && (answered == true)){
 		correctAnswer++;
 		$('#message').html(messages.correct);
+		$('#image').html('<img src="https://i.giphy.com/media/xUOxfg0ESyhKOv4Vva/giphy.webp" />')
+
 	} else if((userSelect != rightAnswerIndex) && (answered == true)){
 		incorrectAnswer++;
 		$('#message').html(messages.incorrect);
 		$('#correctedAnswer').html('The correct answer was: ' + rightAnswerText);
+		$('#image').html('<img src= "assets/images/dead.gif" />')
+
+
 	} else{
 		unanswered++;
 		$('#message').html(messages.endTime);
 		$('#correctedAnswer').html('The correct answer was: ' + rightAnswerText);
+		$('#image').html('<img src= "assets/images/dead.gif" />')
+
 		answered = true;
 	}
 	
@@ -178,10 +188,11 @@ function scoreboard(){
 
 	if (correctAnswer > 5) {
 		$('#qualified').html("CONGRATULATIONS! YOU MAY NOW SURVIVE THE APOCALYPSE!")
+		$('#image').html('<img src= "assets/images/win.gif" />')
 	}
 	else{
 		$('#qualified').html("OUCH! YOU DIDN'T MAKE IT! TRY AGAIN?")
-
+		$('#image').html('<img src= "assets/images/lose.gif" />')
 	}
 }
 

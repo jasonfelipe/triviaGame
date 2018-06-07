@@ -33,7 +33,7 @@ h3 {
     bottom: 0;
     left: 0;
     right: 0;
-    height: 600px;
+    height: 800px;
 }
 
 #instructions {
@@ -57,6 +57,14 @@ h3 {
     text-align: center;
 }
 
+#image{
+    height: 15em;
+    display: flex;
+    align-items: center;
+    justify-content: center
+
+}
+
 .question {
     padding: 15px;
     margin: 0 auto;
@@ -69,12 +77,13 @@ h3 {
     margin: 0 auto;
     width: 450px;   
     text-align: center;
+    margin-top: 120px;
 }
 
 #correctedAnswer{
     padding: 15px;
     margin: 0 auto;
-    width: 450px;   
+    width: 500px;   
     text-align: center;
 }
 
@@ -83,9 +92,9 @@ h3 {
     margin: 0 auto;
     text-align: center;
     width:100px;
-    margin-top: 200px;
     display: flex;
     justify-content: center;
+    margin-top: 10px;
 }
 
 #startBtn:hover {
@@ -94,7 +103,7 @@ h3 {
 }
 
 #finalMessage {
-    font-size: 24pt;
+    font-size: 16pt;
     text-align: center;
 }
 
@@ -137,4 +146,16 @@ h3 {
 #startOverBtn:hover {
     background:  #14F074;
     color: black;
+}
+
+#finalImage {
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#finalScore {
+    position: absolute;
+    right:60    0px;
+    bottom: 100px;
 }
